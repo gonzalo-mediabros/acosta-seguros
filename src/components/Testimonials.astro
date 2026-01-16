@@ -1,0 +1,56 @@
+---
+import styles from "./Testimonials.module.css";
+
+const testimonials = [
+  {
+    quote:
+      "Ericka me explicó todo con una paciencia increíble. Por fin entiendo mi póliza de gastos médicos. Su acompañamiento durante el nacimiento de mi hijo fue clave. ¡Totalmente recomendada!",
+    name: "Sofía Herrera",
+    role: "Madre de Familia",
+    avatar: "https://picsum.photos/100/100?random=2",
+  },
+  {
+    quote:
+      "Como dueño de una PyME, el seguro de Hombre Clave era un misterio para mí. Ericka diseñó una estrategia fiscal y de protección que blinda el futuro de mi empresa. Un servicio invaluable.",
+    name: "Javier Morales",
+    role: "Director de PyME",
+    avatar: "https://picsum.photos/100/100?random=3",
+  },
+  {
+    quote:
+      "Contratar mi Plan Personal de Retiro fue la mejor decisión. La asesoría fue clara, directa y sin rodeos. Sé que mi futuro está en buenas manos gracias a la gestión profesional de Ericka.",
+    name: "Daniela Cortés",
+    role: "Profesional Independiente",
+    avatar: "https://picsum.photos/100/100?random=4",
+  },
+];
+---
+
+<section id="testimonios" class={styles.testimonials}>
+  <div class:list={[styles.container, "container"]}>
+    <div class={styles.header}>
+      <h2 class={styles.title}>La Voz de mis Clientes</h2>
+      <p class={styles.description}>
+        La confianza es la base de mi trabajo. Esto es lo que dicen quienes ya
+        protegen su futuro conmigo.
+      </p>
+    </div>
+
+    <div class={styles.grid}>
+      {
+        testimonials.map((t) => (
+          <div class={styles.card}>
+            <p class={styles.quote}>"{t.quote}"</p>
+            <div class={styles.author}>
+              <img src={t.avatar} alt={t.name} class={styles.avatar} />
+              <div>
+                <p class={styles.name}>{t.name}</p>
+                <p class={styles.role}>{t.role}</p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

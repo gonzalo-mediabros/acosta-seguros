@@ -1,0 +1,28 @@
+---
+import styles from "./Hero.module.css";
+---
+
+<section id="inicio" class={styles.hero}>
+  <div class:list={[styles.container, "container"]}>
+    <div class={styles.textContent}>
+      <h1 class={styles.title}>
+        Estrategias Financieras para Proteger tu <span class={styles.highlight}
+          >Patrimonio</span
+        >.
+      </h1>
+      <p class={styles.description}>
+        Optimiza tus impuestos, planifica tu futuro e invierte con inteligencia
+        a través de una asesoría profesional, directa y 100% online.
+      </p>
+      <a href="#contacto" class={styles.cta}> Iniciar mi Asesoría </a>
+    </div>
+
+    <div class={styles.imageContent}>
+      <img
+        src="https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?q=80&w=1470&auto=format&fit=crop"
+        alt="Equipo de profesionales de negocios en una reunión colaborativa"
+        class={styles.image}
+      />
+    </div>
+  </div>
+</section>

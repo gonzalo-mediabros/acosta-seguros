@@ -1,0 +1,40 @@
+---
+import styles from "./About.module.css";
+---
+
+<section id="sobre-mi" class={styles.about}>
+  <div class:list={[styles.container, "container"]}>
+    <div class={styles.relative}>
+      <div class={styles.grid}>
+        <div class={styles.imageWrapper}>
+          <div class={styles.blob}></div>
+          <img
+            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=988&auto=format&fit=crop"
+            alt="Empresaria profesional sonriendo en un entorno de oficina"
+            class={styles.image}
+          />
+        </div>
+        <div class={styles.textContent}>
+          <h2 class={styles.title}>
+            Asesoría Estratégica, <br />no un Vendedor de Pólizas
+          </h2>
+          <p class={styles.text}>
+            Mi enfoque va más allá de un producto. Analizo tu situación
+            financiera, fiscal y personal para diseñar un plan integral. Mi
+            objetivo es ser tu aliada a largo plazo, ayudándote a tomar
+            decisiones informadas que impulsen tu crecimiento y seguridad.
+          </p>
+          <p class={styles.text}>
+            Con <span class={styles.highlight}>Cédula de Agente 'B'</span>,
+            cuento con la autorización oficial para estructurar soluciones
+            complejas, tanto para la protección de tu familia y patrimonio como
+            para el blindaje financiero y fiscal de tu empresa.
+          </p>
+          <a href="#servicios" class={styles.link}>
+            Explorar mis servicios <span>&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

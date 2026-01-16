@@ -1,0 +1,25 @@
+---
+import styles from "./ServiceAreas.module.css";
+import Icon from "./Icon.astro";
+---
+
+<section class={styles.serviceAreas}>
+  <div class:list={[styles.container, "container"]}>
+    <div class={styles.header}>
+      <h2 class={styles.title}>Zonas de Atención</h2>
+      <p class={styles.description}>
+        Ofreciendo asesoría y servicio personalizado en:
+      </p>
+    </div>
+    <div class={styles.areas}>
+      <div class={styles.area}>
+        <Icon name="location_on" class={styles.icon} />
+        <h3 class={styles.areaName}>Boca del Río, Veracruz</h3>
+      </div>
+      <div class={styles.area}>
+        <Icon name="location_on" class={styles.icon} />
+        <h3 class={styles.areaName}>Monterrey, Nuevo León</h3>
+      </div>
+    </div>
+  </div>
+</section>

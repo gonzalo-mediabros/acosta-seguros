@@ -1,0 +1,59 @@
+---
+import styles from "./WhyUs.module.css";
+import Icon from "./Icon.astro";
+
+const benefits = [
+  {
+    icon: "person",
+    title: "Asesoría Profesional y Directa",
+    description:
+      "Accede a un análisis estratégico sin intermediarios. Tu plan es diseñado y gestionado personalmente por mí.",
+  },
+  {
+    icon: "auto_awesome",
+    title: "Beneficios Fiscales Reales",
+    description:
+      "Estructuro tus planes (PPR, Hombre Clave) para que aproveches al máximo la deducción de impuestos y optimices tu carga fiscal.",
+  },
+  {
+    icon: "shield_with_heart",
+    title: "Flexibilidad y Respaldo",
+    description:
+      "Construimos juntos un plan con plazos y montos adaptados a tus metas, garantizando tu respaldo financiero ante imprevistos.",
+  },
+  {
+    icon: "phonelink_off",
+    title: "Modalidad 100% Virtual",
+    description:
+      "Ahorra tiempo con un servicio ágil y eficiente. Realizamos toda la asesoría por videollamada para tu comodidad.",
+  },
+];
+---
+
+<section id="beneficios" class={styles.whyUs}>
+  <div class:list={[styles.container, "container"]}>
+    <div class={styles.header}>
+      <h2 class={styles.title}>Inteligencia Financiera, no solo Seguros</h2>
+      <p class={styles.description}>
+        Mi valor agregado es la estrategia. Te ofrezco un servicio que
+        transforma productos financieros en herramientas de crecimiento y
+        protección.
+      </p>
+    </div>
+    <div class={styles.grid}>
+      {
+        benefits.map((benefit) => (
+          <div class={styles.benefit}>
+            <div class={styles.benefitHeader}>
+              <div class={styles.iconWrapper}>
+                <Icon name={benefit.icon} class={styles.icon} />
+              </div>
+              <h3 class={styles.benefitTitle}>{benefit.title}</h3>
+            </div>
+            <p class={styles.benefitDescription}>{benefit.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

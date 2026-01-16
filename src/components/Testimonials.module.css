@@ -1,0 +1,96 @@
+.testimonials {
+  padding: 5rem 0;
+  background-color: var(--crema);
+}
+
+@media (min-width: 1024px) {
+  .testimonials {
+    padding: 8rem 0;
+  }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 1.875rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--noche);
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 2.25rem;
+  }
+}
+
+.description {
+  font-size: 1.125rem;
+  color: #4b5563;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.quote {
+  color: #4b5563;
+  margin: 1rem 0;
+  font-style: italic;
+  flex-grow: 1;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+}
+
+.avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+  margin-right: 1rem;
+}
+
+.name {
+  font-weight: 700;
+  color: var(--noche);
+}
+
+.role {
+  color: var(--dorado);
+  font-size: 0.875rem;
+  font-weight: 600;
+}

@@ -1,0 +1,85 @@
+---
+import styles from "./Services.module.css";
+import Icon from "./Icon.astro";
+
+const services = [
+  {
+    title: "Asesoría Fiscal y Corporativa",
+    items: [
+      'Estrategias "Hombre Clave"',
+      "Optimización de impuestos",
+      "Blindaje para negocios",
+      "Planes de sucesión",
+    ],
+    icon: "business_center",
+    highlighted: true,
+  },
+  {
+    title: "Protección Personal y Familiar",
+    items: [
+      "Gastos Médicos Mayores",
+      "Seguros de vida individuales",
+      "Planes educativos para hijos",
+      "Respaldo ante invalidez",
+    ],
+    icon: "favorite",
+  },
+  {
+    title: "Plan de Retiro e Inversión",
+    items: [
+      "Plan Personal de Retiro (PPR)",
+      "Alternativas de inversión",
+      "Planificación financiera a 20 años",
+      "Estrategias de ahorro garantizado",
+    ],
+    icon: "leaderboard",
+  },
+  {
+    title: "Protección Patrimonial",
+    items: [
+      "Seguro para hogar y auto",
+      "Cobertura para mascotas",
+      "Protección de activos",
+      "Asesoría online personalizada",
+    ],
+    icon: "home",
+  },
+];
+---
+
+<section id="servicios" class={styles.services}>
+  <div class:list={[styles.container, "container"]}>
+    <div class={styles.header}>
+      <h2 class={styles.title}>Un Portafolio de Soluciones a tu Medida</h2>
+      <p class={styles.description}>
+        Diseño estrategias integrales que cubren todas las áreas de tu vida
+        financiera, personal y empresarial.
+      </p>
+    </div>
+
+    <div class={styles.grid}>
+      {
+        services.map((service) => (
+          <div
+            class:list={[
+              styles.card,
+              service.highlighted && styles.highlighted,
+            ]}
+          >
+            <Icon name={service.icon} class={styles.icon} />
+            <h3 class={styles.cardTitle}>{service.title}</h3>
+            <hr class={styles.divider} />
+            <ul class={styles.list}>
+              {service.items.map((item) => (
+                <li class={styles.listItem}>
+                  <span class={styles.check}>✓</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,98 @@
+---
+import styles from "./Contact.module.css";
+import Icon from "./Icon.astro";
+---
+
+<section id="contacto" class={styles.contact}>
+  <div class:list={[styles.container, "container"]}>
+    <div class={styles.header}>
+      <h2 class={styles.title}>Agenda tu Cita</h2>
+      <p class={styles.description}>
+        Completa el formulario o contáctame directamente. Estoy para ayudarte a
+        encontrar la mejor protección.
+      </p>
+    </div>
+
+    <div class={styles.mainWrapper}>
+      <div class={styles.infoBox}>
+        <h3 class={styles.infoTitle}>Información de Contacto</h3>
+        <p class={styles.infoText}>
+          Puedes contactarme por estos medios para una respuesta más rápida.
+        </p>
+        <div class={styles.infoList}>
+          <div class={styles.infoItem}>
+            <Icon name="call" class={styles.infoIcon} />
+            <a href="tel:2291070520" class={styles.infoLink}>22.91.07.05.20</a>
+          </div>
+          <div class={styles.infoItem}>
+            <Icon name="mail" class={styles.infoIcon} />
+            <a
+              href="mailto:ericka.acosta.gama@gmail.com"
+              class={styles.infoLink}>ericka.acosta.gama@gmail.com</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class={styles.formWrapper}>
+        <form id="contact-form" class={styles.form}>
+          <div class={styles.gridInputs}>
+            <input
+              type="text"
+              name="name"
+              placeholder="Nombre Completo"
+              required
+              class={styles.input}
+            />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Teléfono"
+              required
+              class={styles.input}
+            />
+          </div>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+            class={styles.input}
+          />
+          <select name="service" required class={styles.select}>
+            <option value="">¿Qué servicio te interesa?</option>
+            <option value="Fiscal">Asesoría Fiscal</option>
+            <option value="Personal">Protección Personal</option>
+            <option value="Patrimonial">Protección Patrimonial</option>
+            <option value="Otro">Otro / Asesoría General</option>
+          </select>
+          <textarea
+            name="message"
+            placeholder="Mensaje breve (opcional)"
+            rows="4"
+            class={styles.textarea}></textarea>
+          <div class={styles.btnWrapper}>
+            <button type="submit" class={styles.submitBtn}>
+              Enviar Mensaje
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById("contact-form") as HTMLFormElement;
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+    console.log("Form submitted:", data);
+    alert(
+      "Gracias por tu mensaje. Me pondré en contacto contigo a la brevedad."
+    );
+    form.reset();
+  });
+</script>

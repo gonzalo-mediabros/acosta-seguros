@@ -1,0 +1,97 @@
+---
+import styles from "./Faq.module.css";
+import Icon from "./Icon.astro";
+
+const faqItems = [
+  {
+    question: "¿Cuál es el beneficio real de un Plan Personal de Retiro (PPR)?",
+    answer:
+      "El doble beneficio: aseguras tu futuro financiero y obtienes una ventaja fiscal hoy. Las aportaciones que realizas a tu PPR son 100% deducibles de impuestos, lo que reduce tu carga fiscal anual mientras tu dinero crece para la jubilación.",
+  },
+  {
+    question: '¿Para qué le sirve a mi empresa un seguro de "Hombre Clave"?',
+    answer:
+      "Es una estrategia de blindaje financiero. Protege a tu negocio de la pérdida económica que causaría la ausencia (por fallecimiento o invalidez) de una persona estratégica. La indemnización es para la empresa, asegurando su continuidad, y además, las primas son deducibles.",
+  },
+  {
+    question: "¿La asesoría online es igual de completa que una presencial?",
+    answer:
+      "Absolutamente. De hecho, es más eficiente. A través de videollamadas, compartimos pantalla, analizamos documentos y diseñamos tu estrategia en tiempo real. Obtienes la misma atención personalizada y profesional, pero con mayor comodidad y rapidez, sin importar dónde te encuentres.",
+  },
+  {
+    question: '¿En qué consiste la "optimización de impuestos"?',
+    answer:
+      "Consiste en utilizar las herramientas y productos financieros que la ley permite para reducir tu pago de impuestos de forma legal. Analizo tu perfil y te ayudo a estructurar un portafolio (PPR, gastos médicos, etc.) que maximice tus deducciones personales y empresariales.",
+  },
+  {
+    question: "No tengo claro por dónde empezar, ¿cuál es el primer paso?",
+    answer:
+      "El primer paso es una sesión de diagnóstico inicial, sin costo. En esta llamada, conversamos sobre tus metas, tu situación actual y tus inquietudes. Con esta información, te presento un mapa de ruta claro con las estrategias que mejor se adaptan a ti. No hay compromiso, solo claridad.",
+  },
+];
+---
+
+<section id="faq" class={styles.faq}>
+  <div class:list={[styles.container, "container"]}>
+    <div class={styles.header}>
+      <h2 class={styles.title}>Preguntas Clave</h2>
+      <p class={styles.description}>
+        Respuestas directas a las dudas más importantes sobre planificación
+        financiera y de seguros.
+      </p>
+    </div>
+
+    <div class={styles.list}>
+      {
+        faqItems.map((item, index) => (
+          <div class={styles.item}>
+            <button
+              class:list={[styles.trigger, "faq-trigger"]}
+              data-index={index}
+            >
+              <span class={styles.question}>{item.question}</span>
+              <Icon name="expand_more" class:list={[styles.icon, "faq-icon"]} />
+            </button>
+            <div class:list={[styles.contentWrapper, "faq-content"]}>
+              <p class={styles.answer}>{item.answer}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  import styles from "./Faq.module.css";
+
+  const triggers = document.querySelectorAll(".faq-trigger");
+
+  triggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      const content = trigger.nextElementSibling;
+      const icon = trigger.querySelector(".faq-icon");
+
+      const isOpen = content?.classList.contains(styles.isOpen);
+
+      // Close all others (optional, keeps it clean)
+      document
+        .querySelectorAll(".faq-content")
+        .forEach((c) => c.classList.remove(styles.isOpen));
+      document
+        .querySelectorAll(".faq-icon")
+        .forEach((i) => i.classList.remove(styles.rotated));
+
+      if (!isOpen) {
+        content?.classList.add(styles.isOpen);
+        icon?.classList.add(styles.rotated);
+      }
+    });
+  });
+
+  // Open first by default
+  const firstContent = document.querySelector(".faq-content");
+  const firstIcon = document.querySelector(".faq-icon");
+  firstContent?.classList.add(styles.isOpen);
+  firstIcon?.classList.add(styles.rotated);
+</script>

@@ -1,0 +1,28 @@
+---
+import styles from "./OnlineBanner.module.css";
+---
+
+<section class={styles.section}>
+  <div class:list={[styles.outerContainer, "container"]}>
+    <div class={styles.banner}>
+      <div class:list={[styles.blob, styles.blobTop]}></div>
+      <div class:list={[styles.blob, styles.blobBottom]}></div>
+
+      <div class={styles.content}>
+        <h2 class={styles.title}>
+          Asesoría Financiera <span class={styles.highlight}>Sin Fronteras</span
+          >
+        </h2>
+        <p class={styles.description}>
+          Accede a una planificación estratégica completa desde cualquier lugar.
+          Mi modalidad 100% online te ofrece la misma atención directa y
+          profesional.
+        </p>
+      </div>
+
+      <div class={styles.btnWrapper}>
+        <a href="#contacto" class={styles.btn}> Agendar Sesión Virtual </a>
+      </div>
+    </div>
+  </div>
+</section>

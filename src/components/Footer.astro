@@ -1,0 +1,50 @@
+---
+import styles from "./Footer.module.css";
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class={styles.footer}>
+  <div class:list={[styles.container, "container"]}>
+    <div class={styles.logoWrapper}>
+      <a href="#" class={styles.logo}>
+        <svg
+          class={styles.logoIcon}
+          viewBox="0 0 48 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M10 42V6H24V13H17V42H10Z" fill="var(--noche)"></path>
+          <path d="M24 42V6H38V13H31V42H24Z" fill="var(--dorado)"></path>
+          <path
+            d="M4 44V4H44"
+            stroke="var(--noche)"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+        </svg>
+        <div class={styles.logoText}>
+          <span class={styles.name}>Ericka Acosta</span>
+          <span class={styles.tagline}>AGENTE DE SEGUROS</span>
+        </div>
+      </a>
+    </div>
+
+    <div class={styles.contactInfo}>
+      <h4 class={styles.contactTitle}>Contacto Directo</h4>
+      <a href="tel:2291070520" class={styles.link}> Tel: 22.91.07.05.20 </a>
+      <a href="mailto:ericka.acosta.gama@gmail.com" class={styles.link}>
+        ericka.acosta.gama@gmail.com
+      </a>
+    </div>
+  </div>
+
+  <div class:list={[styles.bottom, "container"]}>
+    <p>
+      &copy; {currentYear} Ericka Acosta Agente de Seguros. Todos los derechos reservados.
+    </p>
+    <p class={styles.vignette}>
+      Vigilado por la Comisión Nacional de Seguros y Fianzas (CNSF).
+    </p>
+  </div>
+</footer>
