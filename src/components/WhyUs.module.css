@@ -1,4 +1,7 @@
-.whyUs {
+section{
+  padding:3rem 1rem 6rem 1rem;
+}
+/* .whyUs {
   padding: 5rem 0;
   background-color: white;
 }
@@ -7,7 +10,7 @@
   .whyUs {
     padding: 8rem 0;
   }
-}
+} */
 
 .header {
   text-align: center;
@@ -16,7 +19,6 @@
 
 .title {
   font-size: 1.875rem;
-  font-family: 'Playfair Display', serif;
   font-weight: 700;
   color: var(--noche);
   margin-bottom: 1rem;
@@ -39,8 +41,6 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  max-width: 1240px;
-  margin: 0 auto;
 }
 
 @media (min-width: 768px) {
