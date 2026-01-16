@@ -10,7 +10,7 @@
 
 .relative {
   position: relative;
-  max-width: 80rem;
+  max-width: 1240px;
   margin: 0 auto;
 }
 
@@ -31,6 +31,8 @@
 .imageWrapper {
   position: relative;
   padding: 1rem;
+  
+  
 }
 
 @media (min-width: 1024px) {
@@ -44,7 +46,7 @@
   top: 0;
   left: 0;
   width: 8rem;
-  height: 8rem;
+  height: 2rem;
   background-color: rgba(225, 174, 19, 0.2);
   border-radius: 9999px;
   filter: blur(24px);
@@ -57,6 +59,8 @@
   position: relative;
   z-index: 10;
   width: 100%;
+  max-height: 620px;
+  object-fit: cover;
 }
 
 @media (min-width: 1024px) {

@@ -15,8 +15,8 @@
 }
 
 .title {
-  font-size: 1.875rem;
-  font-family: 'Playfair Display', serif;
+  /* font-size: 1.875rem; */
+  /* font-family: 'Playfair Display', serif; */
   font-weight: 700;
   color: var(--noche);
   margin-bottom: 1rem;
@@ -36,7 +36,7 @@
 }
 
 .mainWrapper {
-  max-width: 72rem;
+  max-width: 1240px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
