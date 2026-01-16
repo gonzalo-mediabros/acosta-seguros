@@ -9,10 +9,7 @@
   }
 }
 
-.outerContainer {
-max-width: 1240px;
-  margin: 0 auto;
-}
+/* Standardized container used */
 
 .banner {
   background-color: var(--noche);
@@ -60,7 +57,6 @@ max-width: 1240px;
 
 .title {
   font-size: 1.875rem;
-  font-family: 'Playfair Display', serif;
   font-weight: 700;
   color: white;
   margin-bottom: 1rem;
