@@ -90,10 +90,12 @@
 .name {
   font-weight: 700;
   color: var(--noche);
+  line-height: 1.2;
 }
 
 .role {
   /* color: var(--dorado); */
   font-size: 0.80rem;
   font-weight: 400;
+    line-height: 1.2;
 }
