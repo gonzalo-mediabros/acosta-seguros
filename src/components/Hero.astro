@@ -1,5 +1,6 @@
 ---
 import styles from "./Hero.module.css";
+import heroImg from "../assets/images/hero-professional.jpg";
 ---
 
 <section id="inicio" class={styles.hero}>
@@ -16,11 +17,11 @@ import styles from "./Hero.module.css";
       </p>
       <a href="#contacto" class={styles.cta}> Iniciar mi Asesoría </a>
     </div>
-
     <div class={styles.imageContent}>
       <img
-        src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1470&auto=format&fit=crop"
-        alt="Profesional de seguros brindando asesoría estratégica"
+        src={heroImg.src}
+        alt="Profesional de seguros
+brindando asesoría estratégica"
         class={styles.image}
       />
     </div>

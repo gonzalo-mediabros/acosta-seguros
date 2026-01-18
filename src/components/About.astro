@@ -1,5 +1,6 @@
 ---
 import styles from "./About.module.css";
+import aboutImg from "../assets/images/about-ericka.jpg";
 ---
 
 <section id="sobre-mi" class={styles.about}>
@@ -9,8 +10,9 @@ import styles from "./About.module.css";
         <div class={styles.imageWrapper}>
           <div class={styles.blob}></div>
           <img
-            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=988&auto=format&fit=crop"
-            alt="Empresaria profesional sonriendo en un entorno de oficina"
+            src={aboutImg.src}
+            alt="Empresaria profesional sonriendo en un entorno de
+oficina"
             class={styles.image}
           />
         </div>
@@ -29,7 +31,8 @@ import styles from "./About.module.css";
             para el blindaje financiero y fiscal de tu empresa.
           </p>
           <a href="#servicios" class={styles.link}>
-            Explorar mis servicios <span>&rarr;</span>
+            Explorar mis servicios
+            <span>&rarr;</span>
           </a>
         </div>
       </div>
