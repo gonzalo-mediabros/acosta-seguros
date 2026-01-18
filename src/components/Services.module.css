@@ -108,7 +108,7 @@
 .check {
   font-size: 1.25rem;
   color: var(--dorado);
-  line-height: 1;
+
 }
 
 .card.highlighted .check {

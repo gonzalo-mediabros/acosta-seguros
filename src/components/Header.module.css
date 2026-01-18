@@ -43,7 +43,7 @@
 
 .name {
   font-size: 1.5rem;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Gabarito', sans-serif;
   font-weight: 700;
   color: var(--noche);
   letter-spacing: 0.05em;
@@ -69,21 +69,24 @@
 }
 
 .navLink {
-  font-weight: 600;
+  font-weight: 400;
   color: var(--noche);
+  font-size: 1.2rem;
 }
 
 .navLink:hover {
   color: var(--dorado);
+
 }
 
 .cta {
   background-color: var(--dorado);
   color: var(--noche);
-  font-weight: 700;
+  /* font-weight: 700; */
   padding: 0.5rem 1.25rem;
   border-radius: 9999px;
-  font-size: 0.875rem;
+  /* font-size: 0.875rem; */
+  font-size: 1.2rem;
 }
 
 .cta:hover {

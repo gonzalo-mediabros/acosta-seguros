@@ -1,3 +1,21 @@
+/* Gabarito Font Configuration */
+
+.gabarito-regular {
+  font-family: "Gabarito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.gabarito-bold {
+  font-family: "Gabarito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+
 :root {
   --noche: #080122;
   --dorado: #e1ae13;
@@ -20,14 +38,16 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
+    line-height: 1.8em;
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "inter", sans-serif;
   background-color: var(--crema);
   background-image: linear-gradient(to bottom, var(--crema), var(--blanco));
   color: var(--noche);
-  line-height: 1.2;
+
 }
 
 h1,
@@ -35,9 +55,12 @@ h2,
 h3,
 h4,
 .serif {
-  font-family: "Playfair Display", serif;
+  font-family: "Gabarito", serif;
+      line-height: 1em;
 }
-
+header, footer{
+  padding: 0 1rem;
+}
 section {
   width: 100%;
   margin-left: auto;
@@ -47,7 +70,7 @@ section {
 
 .container {
   max-width: 1440px;
-
+  padding: 1rem;
   margin: 0 auto;
 }
 

@@ -4,45 +4,45 @@ import Icon from "./Icon.astro";
 ---
 
 <header id="header" class={styles.header}>
+  <!-- <section class={styles.section}> -->
   <div class:list={[styles.container, "container"]}>
     <a href="#" class={styles.logo}>
       <!-- <svg
-        class={styles.logoIcon}
-        viewBox="0 0 48 48"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M10 42V6H24V13H17V42H10Z" fill="currentColor"></path>
-        <path d="M24 42V6H38V13H31V42H24Z" fill="var(--dorado)"></path>
-        <path
-          d="M4 44V4H44"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"></path>
-      </svg> -->
+          class={styles.logoIcon}
+          viewBox="0 0 48 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M10 42V6H24V13H17V42H10Z" fill="currentColor"></path>
+          <path d="M24 42V6H38V13H31V42H24Z" fill="var(--dorado)"></path>
+          <path
+            d="M4 44V4H44"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+        </svg> -->
       <div class={styles.logoText}>
         <span class={styles.name}>Ericka Acosta</span>
         <span class={styles.tagline}>AGENTE DE SEGUROS</span>
       </div>
     </a>
-
     <div class={styles.nav}>
       <nav class={styles.nav}>
         <a href="#inicio" class={styles.navLink}>Inicio</a>
         <a href="#servicios" class={styles.navLink}>Servicios</a>
         <a href="#beneficios" class={styles.navLink}>Beneficios</a>
         <a href="#testimonios" class={styles.navLink}>Testimonios</a>
-        <a href="#contacto" class={styles.navLink}>Contacto</a>
+        <!-- <a href="#contacto" class={styles.navLink}>Contacto</a> -->
       </nav>
       <a href="#contacto" class={styles.cta}> Agendar Cita </a>
     </div>
-
     <button id="menu-toggle" class={styles.mobileMenuBtn}>
       <Icon name="menu" class="menu-icon" />
       <Icon name="close" class="close-icon" style="display: none;" />
     </button>
   </div>
+  <!-- </section> -->
 
   <div id="mobile-menu" class={styles.mobileMenu}>
     <a href="#inicio" class={styles.navLink}>Inicio</a>
