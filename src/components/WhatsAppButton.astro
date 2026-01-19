@@ -1,0 +1,21 @@
+---
+import styles from "./WhatsAppButton.module.css";
+const phoneNumber = "+522291070520";
+const message =
+  "Hola, me gustaría recibir más información sobre sus servicios logísticos.";
+
+const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+import whatsappImg from "../assets/images/whatsapp.avif";
+---
+
+<a
+  href={whatsappUrl}
+  target="_blank"
+  rel="noopener noreferrer"
+  class={styles.whatsappBtn}
+  aria-label="Contactar por WhatsApp"
+>
+  <!-- Tooltip -->
+  <span class={styles.tooltip}> ¿En qué podemos ayudarte? </span>
+  <img src={whatsappImg.src} alt="WhatsApp" />
+</a>
