@@ -35,7 +35,12 @@ import Icon from "./Icon.astro";
       </div>
 
       <div class={styles.formWrapper}>
-        <form id="contact-form" class={styles.form}>
+        <form
+          id="contact-form"
+          class={styles.form}
+          data-url={import.meta.env.PUBLIC_SCRIPT_URL}
+          data-apikey={import.meta.env.PUBLIC_SCRIPT_API_KEY}
+        >
           <div class={styles.gridInputs}>
             <input
               type="text"
@@ -50,6 +55,14 @@ import Icon from "./Icon.astro";
               placeholder="Teléfono"
               required
               class={styles.input}
+            />
+          </div>
+          <div style="display: none;">
+            <input
+              type="text"
+              name="website"
+              tabindex="-1"
+              autocomplete="off"
             />
           </div>
           <input
@@ -77,6 +90,44 @@ import Icon from "./Icon.astro";
             </button>
           </div>
         </form>
+
+        <!-- Success Message -->
+        <div
+          id="contact-success"
+          class={styles.feedbackContainer}
+          style="display: none;"
+        >
+          <div class={styles.successIconWrapper}>
+            <Icon name="check" class={styles.feedbackIcon} />
+          </div>
+          <h3 class={styles.feedbackTitle}>¡Gracias!</h3>
+          <p class={styles.feedbackText}>
+            Recibimos tu consulta con éxito. Un especialista se pondrá en
+            contacto contigo pronto.
+          </p>
+          <button type="button" class={styles.resetBtn} id="form-reset-success">
+            Enviar otra consulta
+          </button>
+        </div>
+
+        <!-- Error Message -->
+        <div
+          id="contact-error"
+          class={styles.feedbackContainer}
+          style="display: none;"
+        >
+          <div class={styles.errorIconWrapper}>
+            <Icon name="error" class={styles.feedbackIcon} />
+          </div>
+          <h3 class={styles.feedbackTitle}>¡Ups!</h3>
+          <p class={styles.feedbackText}>
+            Hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo
+            o contáctanos directamente.
+          </p>
+          <button type="button" class={styles.resetBtn} id="form-reset-error">
+            Reintentar
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -85,14 +136,76 @@ import Icon from "./Icon.astro";
 <script>
   const form = document.getElementById("contact-form") as HTMLFormElement;
 
-  form?.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
-    console.log("Form submitted:", data);
-    alert(
-      "Gracias por tu mensaje. Me pondré en contacto contigo a la brevedad.",
-    );
-    form.reset();
-  });
+  if (form) {
+    const SCRIPT_URL = form.dataset.url;
+    const API_KEY = form.dataset.apikey;
+
+    form.addEventListener("submit", async (e: SubmitEvent) => {
+      e.preventDefault();
+
+      if (!SCRIPT_URL) {
+        console.error("Script URL not found");
+        return;
+      }
+
+      const submitBtn = form.querySelector(
+        'button[type="submit"]',
+      ) as HTMLButtonElement;
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerText = "Enviando...";
+      }
+
+      const formData = new FormData(form);
+      const data: Record<string, any> = Object.fromEntries(formData.entries());
+
+      // Metadata obligatoria
+      data.pageUrl = window.location.href;
+      data.api_key = API_KEY || "";
+
+      try {
+        // Usamos fetch con mode: 'no-cors' para Google Apps Script
+        await fetch(SCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+
+        // Éxito: Mostrar mensaje y ocultar form
+        form.style.display = "none";
+        const successEl = document.getElementById("contact-success");
+        if (successEl) successEl.style.display = "flex";
+        form.reset();
+      } catch (error) {
+        console.error("Error al enviar el formulario:", error);
+        // Error: Mostrar mensaje y ocultar form
+        form.style.display = "none";
+        const errorEl = document.getElementById("contact-error");
+        if (errorEl) errorEl.style.display = "flex";
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerText = "Enviar Mensaje";
+        }
+      }
+    });
+
+    // Reset logic
+    const resetSuccess = document.getElementById("form-reset-success");
+    const resetError = document.getElementById("form-reset-error");
+    const successEl = document.getElementById("contact-success");
+    const errorEl = document.getElementById("contact-error");
+
+    [resetSuccess, resetError].forEach((btn) => {
+      btn?.addEventListener("click", () => {
+        if (successEl) successEl.style.display = "none";
+        if (errorEl) errorEl.style.display = "none";
+        form.style.display = "flex";
+      });
+    });
+  }
 </script>

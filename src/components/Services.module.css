@@ -96,6 +96,7 @@
 .list {
   list-style: none;
   flex-grow: 1;
+  line-height: 1.2em;
 }
 
 .listItem {
