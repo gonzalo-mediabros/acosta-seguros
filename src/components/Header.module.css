@@ -40,7 +40,10 @@
   gap: 0.2rem;
   flex-direction: column;
 }
-
+.logoImg{
+  width: 310px;
+  mix-blend-mode: multiply;
+}
 .name {
   font-size: 1.5rem;
   font-family: 'Gabarito', sans-serif;

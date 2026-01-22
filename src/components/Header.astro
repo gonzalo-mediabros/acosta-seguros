@@ -1,30 +1,17 @@
 ---
 import styles from "./Header.module.css";
 import Icon from "./Icon.astro";
+import logo from "../assets/images/logo.png";
 ---
 
 <header id="header" class={styles.header}>
   <!-- <section class={styles.section}> -->
   <div class:list={[styles.container, "container"]}>
     <a href="#" class={styles.logo}>
-      <!-- <svg
-          class={styles.logoIcon}
-          viewBox="0 0 48 48"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M10 42V6H24V13H17V42H10Z" fill="currentColor"></path>
-          <path d="M24 42V6H38V13H31V42H24Z" fill="var(--dorado)"></path>
-          <path
-            d="M4 44V4H44"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"></path>
-        </svg> -->
       <div class={styles.logoText}>
-        <span class={styles.name}>Ericka Acosta</span>
-        <span class={styles.tagline}>AGENTE DE SEGUROS</span>
+        <img class={styles.logoImg} src={logo.src} alt="Acosta Seguros Logo" />
+        <!-- <span class={styles.name}>Ericka Acosta</span>
+        <span class={styles.tagline}>AGENTE DE SEGUROS</span> -->
       </div>
     </a>
     <div class={styles.nav}>
