@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-
+import favicon from "/public/favicon.png";
 interface Props {
   title: string;
   description?: string;
@@ -14,7 +14,7 @@ const { title, description = "Agente de Seguros" } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href={favicon.src} />
     <meta name="generator" content={Astro.generator} />
 
     <!-- SEO -->
