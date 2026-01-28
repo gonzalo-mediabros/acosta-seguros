@@ -2,12 +2,6 @@
 
 Este documento detalla los pasos necesarios para compilar el proyecto, desplegarlo en GitHub Pages y configurar la delegación de dominio.
 
-## 0. Instalación de dependencias
-
-```bash
-npm run install
-```
-
 ## 1. Compilación y Despliegue
 
 ### Build del proyecto
@@ -48,10 +42,6 @@ Para apuntar tu dominio personalizado a GitHub Pages, agrega los siguientes regi
 
 > [!IMPORTANT]
 > si la pagina de github tiene una url temporal como `https://gonzalo-mediabros.github.io/lightman-global/` se debe configurar el base path en el archivo `astro.config.mjs`.
-
-> [!IMPORTANT]
-> Si la web tiene un dominio personalizado, se debe configurar el base path en el archivo `astro.config.mjs`. descomentando y editando las variables.
-> se debe agregar CNAME en la carpeta public con el dominio personalizado.
 
 ---
 
